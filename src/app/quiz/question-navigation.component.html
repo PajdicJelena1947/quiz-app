@@ -1,0 +1,14 @@
+<div class="nav">
+  <button mat-stroked-button color="primary" (click)="prev.emit()" [disabled]="index() === 0">
+    Previous
+  </button>
+
+  @if (index() < total() - 1) { <button mat-raised-button color="accent" (click)="next.emit()">
+    Next
+    </button>
+    } @else {
+    <button mat-raised-button color="warn" (click)="finish.emit()">
+      Finish
+    </button>
+    }
+</div>

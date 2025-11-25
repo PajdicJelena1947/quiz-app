@@ -1,0 +1,9 @@
+<h2>{{ question().question }}</h2>
+
+<mat-radio-group [value]="selected()" (change)="selected.set($event.value)">
+  @for (a of question().answers; track a.id) {
+  <mat-radio-button [value]="a.id" class="answer-option">
+    {{ a.text }}
+  </mat-radio-button>
+  }
+</mat-radio-group>

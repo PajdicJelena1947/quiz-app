@@ -1,0 +1,86 @@
+<div class="quiz-shell">
+  <!-- QUIZ SELECTOR (auto from JSON) -->
+  @if (!loading() && !error() && quizzes()?.length && !quizStarted()) {
+  <div class="quiz-selector">
+    @for (q of quizzes(); track q.id) {
+    <button mat-button [color]="currentQuizId() === q.id ? 'primary' : undefined" (click)="loadQuiz(q.id)">
+      {{ q.title }}
+    </button>
+    }
+  </div>
+  }
+
+  <!-- ERROR -->
+  @if (!loading() && error()) {
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Oops</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ error() }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="loadQuiz('quiz-a')">
+        Retry
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+
+  <!-- BEFORE START -->
+  @if (!loading() && !error() && quiz() && !quizStarted() && !quizFinished()) {
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ quiz()!.title }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>Total questions: {{ total() }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="startQuiz()">
+        Start Quiz
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+
+  <!-- DURING QUIZ -->
+  @if (!loading() && !error() && quizStarted() && !quizFinished() && question()) {
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ quiz()!.title }}</mat-card-title>
+      <mat-card-subtitle>
+        <app-quiz-progress [current]="currentIndex() + 1" [total]="total()" />
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <app-quiz-timer [quizTime]="formatTime(quizSeconds())" [questionSecondsLeft]="questionSecondsLeft()" />
+
+      <app-question-card [question]="question()!" [(selected)]="selectedAnswers[question()!.id]" />
+    </mat-card-content>
+
+    <mat-card-actions>
+      <app-question-navigation [index]="currentIndex()" [total]="total()" (prev)="prev()" (next)="next()"
+        (finish)="finish()" />
+    </mat-card-actions>
+  </mat-card>
+  }
+
+  <!-- RESULTS -->
+  @if (!loading() && !error() && quizFinished() && quiz()) {
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Results</mat-card-title>
+      <mat-card-subtitle>{{ quiz()!.title }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <app-quiz-results [quiz]="quiz()!" [correct]="correctCount" [incorrect]="incorrect" [seconds]="quizSeconds()"
+        (restart)="restart()" />
+    </mat-card-content>
+  </mat-card>
+  }
+</div>

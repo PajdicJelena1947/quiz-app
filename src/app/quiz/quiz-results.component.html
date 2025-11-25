@@ -1,0 +1,36 @@
+<h2>Results</h2>
+
+<p>Total questions: {{ quiz().questions.length }}</p>
+<p>Correct answers: {{ correct() }}</p>
+<p>Incorrect answers: {{ quiz().questions.length - correct() }}</p>
+<p>Total time: {{ formatTime(seconds()) }}</p>
+
+<mat-progress-bar mode="determinate" [value]="percentage">
+</mat-progress-bar>
+
+<h3 style="margin-top: 1rem;">Incorrectly answered questions</h3>
+
+@if (incorrect().length === 0) {
+<p>You answered all questions correctly!</p>
+} @else {
+<mat-list>
+  @for (item of incorrect(); track item.question.id) {
+  <mat-list-item style="height: 9vh">
+    <div mat-line>{{ item.question.question }}</div>
+    <div mat-line>
+      <strong>Your answer:</strong>
+      {{ getAnswerText(item.question, item.selectedAnswerId) }}
+    </div>
+    <div mat-line>
+      <strong>Correct answer:</strong>
+      {{ getCorrectAnswerText(item.question) }}
+    </div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  }
+</mat-list>
+}
+
+<button mat-raised-button color="primary" (click)="restart.emit()" style="margin-top: 1rem;">
+  Restart Quiz
+</button>

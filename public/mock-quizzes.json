@@ -1,0 +1,126 @@
+{
+  "quizzes": [
+    {
+      "id": "quiz-a",
+      "title": "General Medical Knowledge",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is the normal resting heart rate range for a healthy adult?",
+          "answers": [
+            { "id": "a1", "text": "20–40 bpm" },
+            { "id": "a2", "text": "40–60 bpm" },
+            { "id": "a3", "text": "60–100 bpm" },
+            { "id": "a4", "text": "120–160 bpm" }
+          ],
+          "correctAnswerId": "a3"
+        },
+        {
+          "id": 2,
+          "question": "Which vitamin deficiency is most commonly associated with anemia?",
+          "answers": [
+            { "id": "a1", "text": "Vitamin A" },
+            { "id": "a2", "text": "Vitamin B12" },
+            { "id": "a3", "text": "Vitamin C" },
+            { "id": "a4", "text": "Vitamin E" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": 3,
+          "question": "Which organ is responsible for insulin production?",
+          "answers": [
+            { "id": "a1", "text": "Liver" },
+            { "id": "a2", "text": "Pancreas" },
+            { "id": "a3", "text": "Kidneys" },
+            { "id": "a4", "text": "Thyroid" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": 4,
+          "question": "Which symptom is commonly associated with dehydration?",
+          "answers": [
+            { "id": "a1", "text": "Frequent urination" },
+            { "id": "a2", "text": "Dry mouth" },
+            { "id": "a3", "text": "Low blood sugar" },
+            { "id": "a4", "text": "Night sweats" }
+          ],
+          "correctAnswerId": "a2"
+        },
+        {
+          "id": 5,
+          "question": "Which type of blood cell is responsible for fighting infections?",
+          "answers": [
+            { "id": "a1", "text": "Red blood cells" },
+            { "id": "a2", "text": "White blood cells" },
+            { "id": "a3", "text": "Platelets" },
+            { "id": "a4", "text": "Plasma cells" }
+          ],
+          "correctAnswerId": "a2"
+        }
+      ]
+    },
+    {
+      "id": "quiz-b",
+      "title": "Respiratory & Cardiology Basics",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which organ is primarily affected in asthma?",
+          "answers": [
+            { "id": "b1", "text": "Heart" },
+            { "id": "b2", "text": "Lungs" },
+            { "id": "b3", "text": "Liver" },
+            { "id": "b4", "text": "Kidneys" }
+          ],
+          "correctAnswerId": "b2"
+        },
+        {
+          "id": 2,
+          "question": "What is a common symptom of a heart attack?",
+          "answers": [
+            { "id": "b1", "text": "Sharp pain in both legs" },
+            { "id": "b2", "text": "Chest pain or pressure" },
+            { "id": "b3", "text": "Hearing loss" },
+            { "id": "b4", "text": "Persistent hiccups" }
+          ],
+          "correctAnswerId": "b2"
+        },
+        {
+          "id": 3,
+          "question": "What is the primary function of the alveoli in the lungs?",
+          "answers": [
+            { "id": "b1", "text": "Filtering toxins" },
+            { "id": "b2", "text": "Air humidification" },
+            { "id": "b3", "text": "Gas exchange" },
+            { "id": "b4", "text": "Regulating breathing rhythm" }
+          ],
+          "correctAnswerId": "b3"
+        },
+        {
+          "id": 4,
+          "question": "Which measurement indicates high blood pressure?",
+          "answers": [
+            { "id": "b1", "text": "90/60 mmHg" },
+            { "id": "b2", "text": "110/70 mmHg" },
+            { "id": "b3", "text": "120/80 mmHg" },
+            { "id": "b4", "text": "150/95 mmHg" }
+          ],
+          "correctAnswerId": "b4"
+        },
+        {
+          "id": 5,
+          "question": "Which condition involves narrowing of the coronary arteries?",
+          "answers": [
+            { "id": "b1", "text": "Pneumonia" },
+            { "id": "b2", "text": "Atherosclerosis" },
+            { "id": "b3", "text": "Asthma" },
+            { "id": "b4", "text": "Arrhythmia" }
+          ],
+          "correctAnswerId": "b2"
+        }
+      ]
+    }
+  ]
+}
