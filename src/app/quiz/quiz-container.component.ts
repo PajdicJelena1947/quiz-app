@@ -29,7 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     QuizResultsComponent
   ],
   templateUrl: './quiz-container.component.html',
-  styleUrls: ['./quiz-container.component.css']
+  styleUrls: ['./quiz-container.component.css'],
 })
 export class QuizContainerComponent {
   // data
@@ -74,6 +74,10 @@ export class QuizContainerComponent {
   });
 
   constructor(private quizService: QuizService) {
+
+  }
+
+  ngOnInit(): void {
     // load list of all quizzes (for buttons)
     this.quizService.getAllQuizzes()
       .pipe(
